@@ -13,9 +13,9 @@ function App() {
   const fetchRandomNumber = async () => {
     setLoading(true)
     setError(null)
-    
+    const SERVER_PORT=7000;
     try {
-      const response = await fetch('http://localhost:7000/api/random')
+      const response = await fetch(`http://localhost:${SERVER_PORT}/api/random`)
       
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
